@@ -1,7 +1,7 @@
 ARG FEDORA_VERSION
 FROM fedora:${FEDORA_VERSION}
 
-LABEL maintainer="The KubeVirt Project <kubevirt-dev@googlegroups.com>"
+LABEL maintainer="Andrea Bolognani <abologna@redhat.com>"
 
 ARG COPR_VERSION
 ARG LIBVIRT_VERSION
@@ -28,5 +28,7 @@ COPY libvirtd.sh /libvirtd.sh
 RUN chmod a+x /libvirtd.sh
 
 RUN setcap CAP_NET_BIND_SERVICE=+eip "/usr/libexec/qemu-kvm"
+
+RUN echo "Andrea Bolognani <abologna@redhat.com>" >/maintainer
 
 CMD ["/libvirtd.sh"]
