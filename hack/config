@@ -6,7 +6,7 @@
 # Note that in this case the variable must be specified *without*
 # the CONF_ prefix.
 
-CONF_IMAGE_NAME="kubevirt/libvirt"
+CONF_IMAGE_NAME="andreabolognani/kubevirt-libvirt"
 
 CONF_FEDORA_VERSION="32"
 CONF_LIBVIRT_VERSION="6.6.0-3"
