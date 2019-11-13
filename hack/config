@@ -1,6 +1,6 @@
 # This file is sourced during build
 
-IMAGE_NAME="kubevirt/libvirt"
+IMAGE_NAME="andreabolognani/kubevirt-libvirt"
 
 COPR_VERSION="av-8.2"
 FEDORA_VERSION="31"
