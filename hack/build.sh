@@ -15,6 +15,9 @@ for ARCH in ${TARGET_ARCHITECTURES}; do
     TAG="${ARCH}"
     DOCKER_PLATFORM="linux/${ARCH}"
 
+    # Hack for arm64
+    DOCKER_PLATFORM=$(echo "$DOCKER_PLATFORM" | sed "s:/arm64:/arm64/v8:")
+
     docker buildx build \
         --load \
         --platform="${DOCKER_PLATFORM}" \

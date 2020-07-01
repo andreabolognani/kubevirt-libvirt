@@ -10,6 +10,9 @@ GIT_COMMIT=$(git describe --always)
 TAG="${COPR_VERSION}-${GIT_TIMESTAMP}-${GIT_COMMIT}"
 DOCKER_PLATFORM="linux/$(echo "${TARGET_ARCHITECTURES}" | sed "s: :,linux/:g")"
 
+# Hack for arm64
+DOCKER_PLATFORM=$(echo "$DOCKER_PLATFORM" | sed "s:/arm64:/arm64/v8:")
+
 docker login -u="${DOCKER_USER}" -p="${DOCKER_PASS}"
 
 # This builds a multi-architecture image and uploads it, all in a
