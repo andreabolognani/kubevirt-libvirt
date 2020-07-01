@@ -24,7 +24,6 @@ mkdir -p ~/.docker/cli-plugins
 mv buildx ~/.docker/cli-plugins/docker-buildx
 
 # Set up the cross-architecture build environment
-docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 docker buildx create --use
 docker buildx inspect --bootstrap
 
